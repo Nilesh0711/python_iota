@@ -1,4 +1,3 @@
-import json
 import task_allocation as ta
 import data_collection as dc
 import numpy as np
@@ -47,20 +46,20 @@ if __name__ == '__main__':
         ql = ta.Task_allocation(f_j, d_i, alpha, B, P_i, G_i, R_i_j, delta,
                                 task, server, ser_task, EPSILON, ALPHA, GAMMA, max_iteration)
         # random
-        max_random = ql.ramdom_select()
+        # max_random = ql.ramdom_select()
         # print(max_random)
         # greedy
         # max_greedy = ql.greedy_select()
         # print(max_greedy)
         # q_learning
         # print("Q learning")
-        # max_reward, solution, q_table, res = ql.training()
+        max_reward, solution, q_table, res = ql.training()
         # solution=np.array(solution)
         # print(solution)
         # print(max_reward)
         # print(res)
         # print(q_table)
-        max_data_arr.append(max_random)
+        max_data_arr.append(max_reward)
 
     print(max_data_arr)    
 
